@@ -1,0 +1,16 @@
+# ComfyUI 3D Pose Editor
+
+Custom nodes that extend the capabilities of [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+
+# Editor Source
+[open-pose-editor](https://github.com/ZhUyU1997/open-pose-editor)
+
+# List Nodes
+
+| Name                               |                                                     Description                                                     |     ComfyUI category      |
+| :--------------------------------- | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------: |
+| _3D Pose Editor_                         |                                            The node set pose ControlNet                                             |    `image/3D Pose Editor`     |
+
+# Usage
+
+Just drag. If your ComfyUI interface is not responding, try to reload your browser.
