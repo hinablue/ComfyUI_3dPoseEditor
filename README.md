@@ -15,7 +15,7 @@ Custom nodes that extend the capabilities of [ComfyUI](https://github.com/comfya
 
 Just drag. If your ComfyUI interface is not responding, try to reload your browser.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3lbwVWJqbo0?si=hfb7UEwcOQa5o-Zo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Sample Video](https://img.youtube.com/vi/3lbwVWJqbo0/0.jpg)](https://www.youtube.com/watch?v=3lbwVWJqbo0)
 
 ## Sample workflow
 
