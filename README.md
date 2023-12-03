@@ -17,6 +17,13 @@ Just drag. If your ComfyUI interface is not responding, try to reload your brows
 
 [![Sample Video](https://img.youtube.com/vi/3lbwVWJqbo0/0.jpg)](https://www.youtube.com/watch?v=3lbwVWJqbo0)
 
+## Window Portable Issue
+
+If you are using the Windows portable version and are experiencing problems with the installation, please create the following folder manually,
+```
+ComfyUI_windows_portable\ComfyUI\web\extensions\ComfyUI_3dPoseEditor
+```
+
 ## Sample workflow
 
 ![Sample workflow](sample_workflow.png)
