@@ -21,6 +21,7 @@ class OpenPoseEditor {
             formData.append('image', blobData, filename)
             formData.append('overwrite', 'true')
             formData.append('type', 'temp')
+            formData.append('subfolder', '3dposeeditor')
 
             const resp = await fetch('/upload/image', {
                 method: 'POST',

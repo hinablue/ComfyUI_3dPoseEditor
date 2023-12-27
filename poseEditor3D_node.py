@@ -21,11 +21,10 @@ class PoseEditor3D(object):
     @classmethod
     def INPUT_TYPES(self):
         temp_dir = folder_paths.get_temp_directory()
+        temp_dir = os.path.join(temp_dir, '3dposeeditor')
 
         if not os.path.isdir(temp_dir):
             os.makedirs(temp_dir)
-
-        temp_dir = folder_paths.get_temp_directory()
 
         return {
             "required": {},
@@ -47,36 +46,31 @@ class PoseEditor3D(object):
         if pose is None:
             return (None, None, None, None,)
 
-        image_path = os.path.join(
-            folder_paths.get_temp_directory(), pose
-        )
+        temp_dir = folder_paths.get_temp_directory()
+        temp_dir = os.path.join(temp_dir, '3dposeeditor')
+
+        image_path = os.path.join(temp_dir, pose)
 
         i = Image.open(image_path)
         poseImage = i.convert("RGB")
         poseImage = np.array(poseImage).astype(np.float32) / 255.0
         poseImage = torch.from_numpy(poseImage)[None,]
 
-        image_path = os.path.join(
-            folder_paths.get_temp_directory(), depth
-        )
+        image_path = os.path.join(temp_dir, depth)
 
         i = Image.open(image_path)
         depthImage = i.convert("RGB")
         depthImage = np.array(depthImage).astype(np.float32) / 255.0
         depthImage = torch.from_numpy(depthImage)[None,]
 
-        image_path = os.path.join(
-            folder_paths.get_temp_directory(), normal
-        )
+        image_path = os.path.join(temp_dir, normal)
 
         i = Image.open(image_path)
         normalImage = i.convert("RGB")
         normalImage = np.array(normalImage).astype(np.float32) / 255.0
         normalImage = torch.from_numpy(normalImage)[None,]
 
-        image_path = os.path.join(
-            folder_paths.get_temp_directory(), canny
-        )
+        image_path = os.path.join(temp_dir, canny)
 
         i = Image.open(image_path)
         cannyImage = i.convert("RGB")
@@ -90,8 +84,10 @@ class PoseEditor3D(object):
         if pose is None:
             return False
 
-        image_path = os.path.join(
-            folder_paths.get_temp_directory(), pose)
+        temp_dir = folder_paths.get_temp_directory()
+        temp_dir = os.path.join(temp_dir, '3dposeeditor')
+
+        image_path = os.path.join(temp_dir, pose)
         # print(f'Change: {image_path}')
 
         m = hashlib.sha256()

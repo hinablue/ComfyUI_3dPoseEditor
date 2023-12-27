@@ -24,6 +24,12 @@ If you are using the Windows portable version and are experiencing problems with
 ComfyUI_windows_portable\ComfyUI\web\extensions\ComfyUI_3dPoseEditor
 ```
 
+## Efficient Nodes KSampler Issue
+
+When using the same feed in the Efficient KSampler output will be not change if pose editor changed (maybe KSampler cached?).
+
 ## Sample workflow
 
 ![Sample workflow](sample_workflow.png)
+
+Just download this PNG and drop into your ComfyUI.
