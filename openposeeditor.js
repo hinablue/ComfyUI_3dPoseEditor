@@ -99,9 +99,10 @@ function createOpenPoseEditor(node, inputName, inputData, app) {
             Object.assign(this.openposeeditor.style, {
                 left: `${transform.a * margin + transform.e}px`,
                 top: `${transform.d + transform.f + top_offset}px`,
-                width: `${w * transform.a}px`,
-                height: `${w * transform.d}px`,
+                width: `${w}px`,
+                height: `${(w - margin * 17)}px`,
                 position: "absolute",
+                overflow: "hidden",
                 zIndex: app.graph._nodes.indexOf(node),
             })
 
