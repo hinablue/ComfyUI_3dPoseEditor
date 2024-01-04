@@ -22,11 +22,11 @@ webSource_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "we
 assetsSource_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets")
 
 def update_web():
-    shutil.rmtree(extensions_folder)
+    if os.path.exists(extensions_folder):
+        shutil.rmtree(extensions_folder)
 
-    if not os.path.exists(extensions_folder):
-        print("[3D OpenPose Editor] Creating frontend extension folder: " + extensions_folder)
-        os.mkdir(extensions_folder)
+    print("[3D OpenPose Editor] Creating frontend extension folder: " + extensions_folder)
+    os.mkdir(extensions_folder)
 
     print('[3D OpenPose Editor] Copy web folder')
     if os.path.exists(web_folder):
