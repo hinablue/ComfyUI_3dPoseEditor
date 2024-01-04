@@ -5,6 +5,12 @@ Custom nodes that extend the capabilities of [ComfyUI](https://github.com/comfya
 # Editor Source
 [open-pose-editor](https://github.com/ZhUyU1997/open-pose-editor)
 
+## Update
+
+2024.01.04 Rewrite all the load method, fixed issue [#1](https://github.com/hinablue/ComfyUI_3dPoseEditor/issues/1), [#2](https://github.com/hinablue/ComfyUI_3dPoseEditor/issues/2), [#4](https://github.com/hinablue/ComfyUI_3dPoseEditor/issues/4), very thanks [@ltdrdata](https://github.com/ltdrdata)
+
+---
+
 # List Nodes
 
 | Name                               |                                                     Description                                                     |     ComfyUI category      |
@@ -17,12 +23,9 @@ Just drag. If your ComfyUI interface is not responding, try to reload your brows
 
 [![Sample Video](https://img.youtube.com/vi/3lbwVWJqbo0/0.jpg)](https://www.youtube.com/watch?v=3lbwVWJqbo0)
 
-## Window Portable Issue
+## ~~Window Portable Issue~~
 
-If you are using the Windows portable version and are experiencing problems with the installation, please create the following folder manually,
-```
-ComfyUI_windows_portable\ComfyUI\web\extensions\ComfyUI_3dPoseEditor
-```
+~~If you are using the Windows portable version and are experiencing problems with the installation, please create the following folder manually.~~
 
 ## Efficient Nodes KSampler Issue
 
