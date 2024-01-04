@@ -6,7 +6,7 @@ class OpenPoseEditor {
         this.images = node.widgets.filter(w => ['pose','depth','normal','canny'].indexOf(w.name)> -1)
 
         this.iframe =  document.createElement('iframe')
-        this.iframe.src = '/extensions/ComfyUI_3dPoseEditor/web/index.html'
+        this.iframe.src = '/extensions/ComfyUI_3dPoseEditor/editor.html'
         container.appendChild(this.iframe)
     }
 
@@ -94,23 +94,22 @@ function createOpenPoseEditor(node, inputName, inputData, app) {
                 )
                 .multiplySelf(ctx.getTransform())
                 .translateSelf(margin, margin + y)
-            const scale = new DOMMatrix().scaleSelf(transform.a, transform.d)
 
             Object.assign(this.openposeeditor.style, {
                 left: `${transform.a * margin + transform.e}px`,
                 top: `${transform.d + transform.f + top_offset}px`,
-                width: `${w}px`,
-                height: `${(w - margin * 17)}px`,
+                width: `${(w * transform.a)}px`,
+                height: `${(w * transform.d - widgetHeight - (margin * 15) * transform.d)}px`,
                 position: "absolute",
                 overflow: "hidden",
                 zIndex: app.graph._nodes.indexOf(node),
             })
 
             Object.assign(this.openposeeditor.children[0].style, {
-                transformOrigin: "0 0",
-                transform: scale,
-                width: w + "px",
-                height: (w - margin * 17) + "px",
+                transformOrigin: "50% 50%",
+                width: '100%',
+                height: '100%',
+                border: '0 none',
             })
 
             this.openposeeditor.hidden = !visible

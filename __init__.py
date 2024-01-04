@@ -11,41 +11,35 @@ import __main__
 from distutils.dir_util import copy_tree
 from .poseEditor3D_node import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
 
-__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
+WEB_DIRECTORY = "./web"
 
-# ComfyUI folders web
-folder_web = os.path.join(os.path.dirname(os.path.realpath(__main__.__file__)), "web")
-extensions_folder = os.path.join(folder_web, 'extensions', 'ComfyUI_3dPoseEditor')
-web_folder = os.path.join(extensions_folder, 'web')
-assets_folder = os.path.join(extensions_folder, 'assets')
-webSource_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "web")
-assetsSource_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets")
+__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS', 'WEB_DIRECTORY']
 
-def update_web():
-    if os.path.exists(extensions_folder):
-        shutil.rmtree(extensions_folder)
+# # ComfyUI folders web
+# folder_web = os.path.join(os.path.dirname(os.path.realpath(__main__.__file__)), "web")
+# extensions_folder = os.path.join(folder_web, 'extensions', 'ComfyUI_3dPoseEditor')
+# web_folder = os.path.join(extensions_folder, 'web')
+# assets_folder = os.path.join(extensions_folder, 'assets')
+# webSource_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "web")
+# assetsSource_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets")
 
-    print("[3D OpenPose Editor] Creating frontend extension folder: " + extensions_folder)
-    os.mkdir(extensions_folder)
+# def update_web():
+#     if os.path.exists(extensions_folder):
+#         shutil.rmtree(extensions_folder)
 
-    print('[3D OpenPose Editor] Copy web folder')
-    if os.path.exists(web_folder):
-        shutil.rmtree(web_folder)
-    copy_tree(webSource_folder, web_folder)
+#     print("[3D OpenPose Editor] Creating frontend extension folder: " + extensions_folder)
+#     os.mkdir(extensions_folder)
 
-    print('[3D OpenPose Editor] Copy assets folder')
-    if os.path.exists(assets_folder):
-        shutil.rmtree(assets_folder)
-    copy_tree(assetsSource_folder, assets_folder)
+#     print('[3D OpenPose Editor] Copy web folder')
+#     if os.path.exists(web_folder):
+#         shutil.rmtree(web_folder)
+#     copy_tree(webSource_folder, web_folder)
 
-    print('[3D OpenPose Editor] Copy js file')
-    if os.path.exists(extensions_folder + os.sep + 'openposeeditor.js'):
-        os.remove(extensions_folder + os.sep + 'openposeeditor.js')
-    shutil.copy(
-        os.path.dirname(os.path.realpath(__file__)) + os.sep + 'openposeeditor.js',
-        extensions_folder + os.sep + 'openposeeditor.js'
-    )
+#     print('[3D OpenPose Editor] Copy assets folder')
+#     if os.path.exists(assets_folder):
+#         shutil.rmtree(assets_folder)
+#     copy_tree(assetsSource_folder, assets_folder)
 
-update_web()
+# update_web()
 
 print('\033[34m3D OpenPose Editor: \033[92mLoaded\033[0m')
